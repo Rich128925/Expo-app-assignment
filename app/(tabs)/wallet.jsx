@@ -16,7 +16,6 @@ const Wallet = () => {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
 
-  // Placeholder data — replace with real data source later
   const wallets = []
 
   const totalBalance = wallets.reduce((sum, w) => sum + (w.amount ?? 0), 0)
@@ -35,7 +34,6 @@ const Wallet = () => {
           text: 'Delete',
           style: 'destructive',
           onPress: async () => {
-            // TODO: wire up real delete logic once walletService is available
             console.log('Delete wallet:', wallet.id)
           },
         },

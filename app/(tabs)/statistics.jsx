@@ -45,7 +45,6 @@ const Statistics = () => {
   const router = useRouter();
   const [period, setPeriod] = useState("Monthly");
 
-  // Placeholder data — replace with real data source later
   const transactions = [];
   const isLoading = false;
 
@@ -345,7 +344,6 @@ const Statistics = () => {
   );
 };
 
-// eslint-disable-next-line import/namespace
 const SummaryCard = ({ label, amount, color, icon }) => {
   // eslint-disable-next-line import/namespace
   const IconComp = Icons[icon] ?? Icons.CurrencyDollarSimple;

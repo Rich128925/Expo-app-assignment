@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     gap: 12,
     position: 'relative',
   },
-  // decorative glowing circles
+  
   circleLarge: {
     position: 'absolute',
     width: 180,

@@ -21,7 +21,6 @@ const Home = () => {
 
   const firstName = user?.name?.split(" ")[0]?.trim() || "there";
 
-  // Placeholder data — replace with real data source later
   const wallets = [];
   const transactions = [];
 
@@ -152,7 +151,7 @@ const Home = () => {
           />
         </View>
 
-        {/** ── Recent transactions (placeholder list) ── */}
+        {/** ── Recent transactions ──  */}
         <View style={{ gap: 10 }}>
           <Typo size={16} fontWeight="600">
             Recent Transactions
@@ -174,7 +173,7 @@ const Home = () => {
         </View>
       </ScrollView>
 
-      {/** ── FAB — Add transaction ── */}
+      {/** ── Add transaction ── */}
       <TouchableOpacity
         style={styles.fab}
         activeOpacity={0.85}
@@ -186,7 +185,7 @@ const Home = () => {
   );
 };
 
-/** ── Quick action button ─────────────────────────── */
+/** ──  button ──── */
 const QuickAction = ({ icon, label, bg, onPress }) => (
   <TouchableOpacity style={styles.qaItem} onPress={onPress} activeOpacity={0.8}>
     <View style={[styles.qaIcon, { backgroundColor: bg ?? "#262626" }]}>

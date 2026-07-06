@@ -104,8 +104,8 @@ const Profile = () => {
             <Typo style={styles.nameText}>{user?.name || "No Name"}</Typo>
             <Typo style={styles.emailText}>{user?.email || "No Email"}</Typo>
 
-            {/* UID */}
-            <View style={styles.infoRow}>
+            UID
+            {/* <View style={styles.infoRow}>
               <Typo size={12} color={"#737373"}>
                 UID:{" "}
               </Typo>
@@ -117,10 +117,10 @@ const Profile = () => {
               >
                 <Icons.Info size={14} color={"#737373"} />
               </TouchableOpacity>
-            </View>
+            </View> */}
 
             {/* Token */}
-            {token && (
+            {/* {token && (
               <View style={styles.infoRow}>
                 <Typo size={12} color={"#737373"}>
                   Token:{" "}
@@ -134,7 +134,7 @@ const Profile = () => {
                   <Icons.ShareNetwork size={14} color={"#737373"} />
                 </TouchableOpacity>
               </View>
-            )}
+            )} */}
           </View>
         </View>
 

@@ -16,7 +16,7 @@ import React, {
   useState,
 } from "react";
 
-// ─── Keep splash visible until auth resolves ─────────────────
+
 SplashScreen.preventAutoHideAsync();
 
 export const AuthContext = createContext(null);
@@ -24,7 +24,7 @@ export const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [initializing, setInitializing] = useState(true);
-  const initializingRef = useRef(true); // only hide splash once
+  const initializingRef = useRef(true); 
 
   // ── Create / update user document in Firestore ────────────
   const createUserDocument = async (uid, email, name) => {
@@ -71,8 +71,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // ── Auth state listener — only sets state, no navigation here ──
-  // Navigation is handled centrally in app/_layout.jsx based on `user`.
+  
   useEffect(() => {
     let isMounted = true;
 
@@ -81,7 +80,7 @@ export const AuthProvider = ({ children }) => {
         if (firebaseUser && isMounted) {
           console.log("✅ AUTH: Logged in —", firebaseUser.email);
 
-          // 1. Set user immediately from Auth data (fast)
+          
           setInitializing(false);
           const profile = await getUserData(firebaseUser.uid);
           const name = profile?.name || firebaseUser.displayName || null;
@@ -94,7 +93,7 @@ export const AuthProvider = ({ children }) => {
             image: firebaseUser.photoURL,
           });
 
-          // Update user document with latest auth/displayName if needed
+          
           createUserDocument(
             firebaseUser.uid,
             firebaseUser.email || "",
@@ -108,7 +107,7 @@ export const AuthProvider = ({ children }) => {
       } catch (error) {
         console.log("⚠️  Auth state error:", error?.message);
       } finally {
-        // Hide splash only on first auth resolution
+       
         if (isMounted && initializingRef.current) {
           initializingRef.current = false;
           await SplashScreen.hideAsync();
@@ -122,7 +121,7 @@ export const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  // ── Login ────────────────────────────────────────────────
+  // ────────────────────── Login ────────────────────────────
   const login = async (email, password) => {
     console.log("🔐 LOGIN: Attempting —", email);
     try {
@@ -146,7 +145,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // ── Register ─────────────────────────────────────────────
+  // ───────────────────────── Register ──────────────────────
   const register = async (email, password, name) => {
     console.log("📝 REGISTER: Creating account —", email);
     try {
@@ -181,7 +180,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // ── Logout ───────────────────────────────────────────────
+  // ───────────────────────── Logout ────────────────────────
   const logout = async () => {
     try {
       await signOut(auth);
@@ -193,7 +192,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // ── Update user data ─────────────────────────────────────
+  // ──────────────────── Update user data ───────────────────
   const updateUserData = async (userId) => {
     const data = await getUserData(userId);
     if (data) {

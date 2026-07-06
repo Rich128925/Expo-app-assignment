@@ -3,7 +3,7 @@ import { Redirect } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { Image, StyleSheet, View } from "react-native";
 
-// This screen handles initial splash + redirect based on auth state.
+
 export default function Index() {
   const { user, initializing } = useAuth();
   const [showSplash, setShowSplash] = useState(true);

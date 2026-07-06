@@ -22,9 +22,7 @@ const firebaseConfig = {
 
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
-// ── Auth ──────────────────────────────────────────────────────
-// Try initializeAuth FIRST (with AsyncStorage persistence).
-// Only falls back to getAuth on hot reload, when auth is already initialized.
+
 let auth;
 try {
   auth = initializeAuth(app, {
@@ -34,10 +32,7 @@ try {
   auth = getAuth(app);
 }
 
-// ── Firestore ─────────────────────────────────────────────────
-// experimentalForceLongPolling — forces long-polling transport instead of
-// WebSockets, which is more reliable on React Native / emulators that
-// sometimes block or mishandle streaming connections.
+
 let firestore;
 try {
   firestore = initializeFirestore(app, {
