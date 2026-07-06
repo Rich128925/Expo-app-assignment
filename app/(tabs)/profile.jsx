@@ -16,7 +16,7 @@ const Profile = () => {
   const [token, setToken] = useState(null);
 
   useEffect(() => {
-    // Fetch the current ID token to display
+    
     auth.currentUser
       ?.getIdToken(false)
       .then(setToken)
@@ -104,7 +104,7 @@ const Profile = () => {
             <Typo style={styles.nameText}>{user?.name || "No Name"}</Typo>
             <Typo style={styles.emailText}>{user?.email || "No Email"}</Typo>
 
-            UID
+            {/* UID */}
             {/* <View style={styles.infoRow}>
               <Typo size={12} color={"#737373"}>
                 UID:{" "}

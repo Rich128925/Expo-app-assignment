@@ -1,5 +1,11 @@
 # Welcome to your Expo app 👋
 
+// Assignment link below
+
+Assignment Link https://drive.google.com/file/d/1sCcTJUv_Y-U0pEx2KOu1ShcE028FrSaO/view?usp=sharing
+
+
+
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
