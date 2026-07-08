@@ -2,6 +2,7 @@ import { useAuth } from "@/contexts/authContext";
 import { Redirect } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { Image, StyleSheet, View } from "react-native";
+import { FadeInDown } from 'react-native-reanimated'
 
 
 export default function Index() {
@@ -20,6 +21,7 @@ export default function Index() {
           style={styles.logo}
           resizeMode="contain"
           source={require("../assets/images/splashImage.png")}
+          entering={FadeInDown.duration(900).springify()}
         />
       </View>
     );
